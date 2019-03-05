@@ -1,6 +1,6 @@
 ## 配置必须写在bootstrap里 否则无法生效
 server:
-  port: 8086
+  port: 8087
 
 spring:
   application:
@@ -15,6 +15,32 @@ spring:
       # pro正式环境
       profile: dev
       #配置server的地址
-      uri: http://localhost:8088/
+      #uri: http://localhost:8088/
       #配置文件名 默认获取config-client
       name: config
+      discovery:
+        enabled: true
+        service-id: config-server
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 172.27.8.141
+    port: 5672
+    username: root
+    password: 123456
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        #更新配置的url要包含的字符
+        include: bus-refresh
+  endpoint:
+    bus-refresh:
+      enabled: true
