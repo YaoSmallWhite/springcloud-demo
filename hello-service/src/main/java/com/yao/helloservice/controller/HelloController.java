@@ -14,9 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @Value("${server.port}")
     private int port;
+
     @GetMapping("/sayHello")
-    public String sayHello(){
-        return "hello,i'm from port:"+port;
+    public String sayHello() {
+        return "hello,i'm from port:" + port;
     }
 
 }

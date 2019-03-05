@@ -18,10 +18,11 @@ import javax.servlet.http.HttpServletRequest;
 public class MyFilter extends ZuulFilter {
     /**
      * 过滤类型，在zuul中定义了四种不同生命周期的过滤器类型
-     * @return  pre：路由之前
-     *          routing：路由之时
-     *          post： 路由之后
-     *          error：发送错误调用
+     *
+     * @return pre：路由之前
+     * routing：路由之时
+     * post： 路由之后
+     * error：发送错误调用
      */
     @Override
     public String filterType() {
@@ -30,6 +31,7 @@ public class MyFilter extends ZuulFilter {
 
     /**
      * 过滤的顺序
+     *
      * @return
      */
     @Override
@@ -39,6 +41,7 @@ public class MyFilter extends ZuulFilter {
 
     /**
      * 是否需要此过滤器执行过滤
+     *
      * @return
      */
     @Override
@@ -48,18 +51,19 @@ public class MyFilter extends ZuulFilter {
 
     /**
      * 过滤逻辑
+     *
      * @return
      * @throws ZuulException
      */
     @Override
-    public Object run()  {
+    public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         String url = request.getRequestURL().toString();
-        System.out.println("经过zuul请求的url为"+url);
+        System.out.println("经过zuul请求的url为" + url);
 //       获取token
         String token = request.getParameter("token");
-        if(token==null||"".equals(token)){
+        if (token == null || "".equals(token)) {
             //过滤该请求，不进行路由
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(401);

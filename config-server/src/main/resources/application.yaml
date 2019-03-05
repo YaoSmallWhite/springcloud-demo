@@ -16,7 +16,6 @@ spring:
       label: master
 
 
-
   application:
     name: config-server
 

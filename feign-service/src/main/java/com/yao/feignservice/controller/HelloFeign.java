@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @FeignClient("hello-service")
 public interface HelloFeign {
-    @RequestMapping(value = "/sayHello",method = RequestMethod.GET)
+    @RequestMapping(value = "/sayHello", method = RequestMethod.GET)
     String say();
 }

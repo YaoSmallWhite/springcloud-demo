@@ -17,11 +17,11 @@ public class HelloTestService {
     private RestTemplate restTemplate;
 
     @HystrixCommand(fallbackMethod = "error")
-    public String say(){
-        return restTemplate.getForObject("http://hello-service/sayHello",String.class);
+    public String say() {
+        return restTemplate.getForObject("http://hello-service/sayHello", String.class);
     }
 
-    private String error(){
+    private String error() {
         return "sorry,there is a problem!";
     }
 }

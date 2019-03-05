@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class ConfigController {
     @Value("${address}")
     private String address;
+
     @GetMapping("/getConfig")
-    public String getConfig(){
-        return "get address="+address+" from git ";
+    public String getConfig() {
+        return "get address=" + address + " from git ";
     }
 }

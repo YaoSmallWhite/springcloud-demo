@@ -16,9 +16,10 @@ public class RibbonServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(RibbonServiceApplication.class, args);
     }
+
     @Bean
     @LoadBalanced
-    public RestTemplate restTemplate(){
+    public RestTemplate restTemplate() {
         return new RestTemplate();
     }
 }

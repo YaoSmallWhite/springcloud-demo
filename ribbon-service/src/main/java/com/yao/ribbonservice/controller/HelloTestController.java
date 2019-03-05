@@ -17,7 +17,7 @@ public class HelloTestController {
     private HelloTestService helloTestService;
 
     @GetMapping("/ribbonSayHello")
-    public String say(){
+    public String say() {
         return helloTestService.say();
     }
 }

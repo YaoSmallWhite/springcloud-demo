@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloTestController {
     @Autowired
     private HelloFeign helloFeign;
+
     @GetMapping("/feignSayHello")
-    public String say(){
+    public String say() {
         return helloFeign.say();
     }
 }

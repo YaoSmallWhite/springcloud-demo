@@ -21,26 +21,9 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
-    bus:
-      enabled: true
-      trace:
-        enabled: true
-  rabbitmq:
-    host: 172.27.8.141
-    port: 5672
-    username: root
-    password: 123456
+
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-management:
-  endpoints:
-    web:
-      exposure:
-        #更新配置的url要包含的字符
-        include: bus-refresh
-  endpoint:
-    bus-refresh:
-      enabled: true
