@@ -1,0 +1,19 @@
+server:
+  port: 8088
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          #\u914D\u7F6E\u4ED3\u5730\u5740
+          uri: https://github.com/YaoSmallWhite/springcloud-demo
+          #\u5171\u6709\u4ED3\u5E93\u53EF\u4EE5\u4E0D\u586B
+          username:
+          password:
+          #\u67E5\u627E\u914D\u7F6E\u6587\u4EF6\u8DEF\u5F84
+          search-paths: config
+      label: master
+
+  application:
+    name: config-server
