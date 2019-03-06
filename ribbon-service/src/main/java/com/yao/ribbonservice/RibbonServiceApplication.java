@@ -1,5 +1,6 @@
 package com.yao.ribbonservice;
 
+import brave.sampler.Sampler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -21,5 +22,9 @@ public class RibbonServiceApplication {
     @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
+    }
+    @Bean
+    public Sampler sampler(){
+        return Sampler.ALWAYS_SAMPLE;
     }
 }
