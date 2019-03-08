@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: after_route
+
+
+
+
+  #--- \u4EE3\u8868\u53E6\u4E00\u4E2A\u914D\u7F6E\u6587\u4EF6
+---
+spring:
+  #\u5B9A\u4E49\u914D\u7F6E\u6587\u4EF6\u540D\u5B57
+  profiles: after_route
+  cloud:
+    gateway:
+      routes:
+        - id: after_route
+          uri: http://www.baidu.com
+          predicates:
+            - After=2017-01-20T17:42:47.789-07:00[America/Denver]
